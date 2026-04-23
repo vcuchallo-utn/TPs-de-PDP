@@ -1,0 +1,7 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "tpHoraDeLectura:lib"
+
+    - path: "./test"
+      component: "tpHoraDeLectura:test:tpHoraDeLectura-test"
