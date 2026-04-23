@@ -13,8 +13,7 @@ type Libro = (Nombre, Autor, CantidadDePaginas)
 
 --Definicion de datos ----------------------------------------------------------------------------------------
 
-capituloShingeki :: Number -> Libro
-capituloSandman :: Number -> Libro
+capituloShingeki, capituloSandman :: Number -> Libro
 
 capituloShingeki numero = ("Shingeki no Kyojin - Capitulo" ++ show numero, "Hajime Isayama", 40)
 capituloSandman numero = ("Sandman - Capitulo "++ show numero, "Neil Gaiman", 35)
@@ -22,9 +21,7 @@ capituloSandman numero = ("Sandman - Capitulo "++ show numero, "Neil Gaiman", 35
 visitante :: Libro
 visitante = ("El visitante", "Stephen King", 592)
 
-shingeki1 :: Libro
-shingeki3 :: Libro
-shingeki127 :: Libro
+shingeki1, shingeki3, shingeki127 :: Libro
 shingeki1 = capituloShingeki 1
 shingeki3 = capituloShingeki 3
 shingeki127 = capituloShingeki 127
@@ -32,9 +29,8 @@ shingeki127 = capituloShingeki 127
 sagaShingeki :: [Libro]
 sagaShingeki = [shingeki1,shingeki3,shingeki127]
 
-sandman5 :: Libro
-sandman10 :: Libro
-sandman12 :: Libro
+sandman5, sandman10, sandman12 :: Libro
+
 sandman5 = capituloSandman 5
 sandman10 = capituloSandman 10
 sandman12 = capituloSandman 12
@@ -42,10 +38,7 @@ sandman12 = capituloSandman 12
 fundacion :: Libro
 fundacion = ("Fundacion","Isaac Asimov", 230)
 
-eragon :: Libro
-eldest :: Libro
-brisignr :: Libro
-legado :: Libro
+eragon, eldest, brisignr, legado :: Libro
 eragon = ("Eragon","Christopher Paolini",544)
 eldest = ("Eldest","Christopher Paolini",704)
 brisignr = ("Brisignr","Christopher Paolini",700)
@@ -56,8 +49,7 @@ bibliotecaPdp = [visitante, shingeki1, shingeki3, shingeki127, fundacion, sandma
 
 
 cantidadDePaginasMostrar :: Libro -> Number
-autorMostrar :: Libro -> String
-nombreMostrar :: Libro -> String
+autorMostrar, nombreMostrar :: Libro -> String
 cantidadDePaginasMostrar (_,_,paginas) = paginas
 autorMostrar (_,nombreAutor,_) = nombreAutor
 nombreMostrar (nombreLibro,_,_) = nombreLibro
@@ -74,15 +66,12 @@ promedioDeHojas biblioteca =  sum (map cantidadDePaginasMostrar biblioteca) / le
 sagaEragon :: [Libro]
 sagaEragon = [eragon, eldest, brisignr, legado]
 
-esFundacion :: Libro -> Bool
-esDeSagaEragon :: Libro -> Bool
+esFundacion, esDeSagaEragon, esLecturaObligatoria :: Libro -> Bool
 esDeAutor :: String -> Libro -> Bool
 esFundacion libro = libro == fundacion
 esDeSagaEragon libro = elem libro sagaEragon
 esDeAutor nombreAutor libro = nombreAutor == autorMostrar libro 
-
-esLecturaObligatoria :: Libro -> Bool
-esLecturaObligatoria libro = esFundacion libro || esDeSagaEragon libro || esDeAutor "StephenKing" libro
+esLecturaObligatoria libro = esFundacion libro || esDeSagaEragon libro || esDeAutor "Stephen King" libro
 
 
 --Funcion de es fantasiosa ----------------------------------------------------------------------------------------
@@ -99,8 +88,7 @@ esFantasiosa unaBiblioteca = tieneAutor "Neil Gaiman" unaBiblioteca || tieneAuto
 
 nombreDeLaBiblioteca :: [Libro] -> String
 quitarVocales :: String -> String
-esVocal :: Char -> Bool
-esVocalOEspacioOGuion :: Char -> Bool 
+esVocal, esVocalOEspacioOGuion :: Char -> Bool
 esVocalOEspacioOGuion letra = esVocal letra || elem letra " -1234567890"
 esVocal letra = elem letra "aeiouAEIOUáéíóúÁÉÍÓÚ"
 quitarVocales palabra = filter (not.esVocalOEspacioOGuion) palabra 
