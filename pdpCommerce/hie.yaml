@@ -1,0 +1,7 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "pdpCommerce:lib"
+
+    - path: "./test"
+      component: "pdpCommerce:test:pdpCommerce-test"
