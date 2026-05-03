@@ -1,0 +1,7 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "braulioEstrella:lib"
+
+    - path: "./test"
+      component: "braulioEstrella:test:braulioEstrella-test"
